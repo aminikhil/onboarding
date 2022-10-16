@@ -1,0 +1,17 @@
+.Divider {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--color-border);
+}
+
+.Divider-active {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-border-dark) 50%,
+    var(--color-border) 50%
+  );
+}
+
+.Divider-completed {
+  background-color: var(--color-border-dark);
+}

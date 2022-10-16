@@ -1,0 +1,20 @@
+.Step {
+  margin: 0;
+  padding: 0;
+  height: 36px;
+  width: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.Step-active,
+.Step-completed {
+  color: #fff;
+  background-color: var(--color-primary);
+}
