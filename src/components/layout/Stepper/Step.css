@@ -15,6 +15,6 @@
 
 .Step-active,
 .Step-completed {
-  color: #fff;
+  color: var(--color-text-white);
   background-color: var(--color-primary);
 }

@@ -1,7 +1,7 @@
 import "./Step.css";
 
-export default function Step({ index, children, status, setActiveChild }) {
-  const handleOnClick = () => setActiveChild(index);
+export default function Step({ index, children, status, setActiveStep }) {
+  const handleOnClick = () => setActiveStep(index);
   return (
     <div
       className={`Step Step-${status}`}

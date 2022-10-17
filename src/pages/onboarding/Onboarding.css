@@ -1,0 +1,32 @@
+.Onboarding {
+  width: 80%;
+  margin: auto;
+  margin-top: 8vh;
+}
+.Onboarding .branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+.Onboarding img {
+  max-height: 32px;
+  margin-right: 8px;
+}
+.Onboarding .Stepper {
+  margin: 16px 32% 56px;
+}
+.form-group-wrapper {
+  margin: 32px 30% 0;
+}
+.btn-wrapper {
+  margin: 20px 30%;
+}
+.icon-check {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: block;
+  padding: 16px;
+  margin: auto !important;
+  margin-bottom: 32px !important;
+}

@@ -1,0 +1,28 @@
+.card-radio-input {
+  border: 2px solid var(--color-border-dark2);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 8px;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.card-radio-input-selected {
+  border-color: var(--color-primary) !important;
+}
+.card-radio-input img {
+  height: 24px;
+}
+.card-radio-input input {
+  display: none;
+  flex-flow: unset;
+}
+.card-radio-input h4 {
+  text-align: left;
+  margin-bottom: 0;
+}
+.card-radio-input .body1 {
+  text-align: left;
+  font-size: 300;
+  font-size: 14px;
+  margin-bottom: 0;
+}

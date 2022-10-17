@@ -1,24 +1,26 @@
-import { useState, cloneElement, Fragment } from "react";
+import { cloneElement, Fragment, useEffect } from "react";
 import Divider from "./Divider";
 import "./Stepper.css";
 
-export default function Stepper({ children }) {
-  const [activeChild, setActiveChild] = useState(0);
-
+export default function Stepper({
+  children,
+  activeStep = 2,
+  setActiveStep = () => {},
+}) {
   return (
     <div>
       <div className="Stepper">
         {children.map((child, index) => {
           const cloneChild = cloneElement(child, {
-            status: getStatus(index, activeChild),
+            status: getStatus(index, activeStep),
             index,
-            setActiveChild,
+            setActiveStep,
           });
           return (
             <Fragment key={`step-${index}`}>
               {cloneChild}
               {index !== children.length - 1 && (
-                <Divider status={getStatus(index, activeChild)} />
+                <Divider status={getStatus(index, activeStep)} />
               )}
             </Fragment>
           );
@@ -28,10 +30,10 @@ export default function Stepper({ children }) {
   );
 }
 
-function getStatus(index, activeChild) {
-  return activeChild === index
+function getStatus(index, activeStep) {
+  return activeStep === index
     ? "active"
-    : activeChild > index
+    : activeStep > index
     ? "completed"
     : "in-active";
 }

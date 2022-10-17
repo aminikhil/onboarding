@@ -3,6 +3,9 @@
   --color-border1: #bdc5d6;
   --color-border: #f4f6f9;
   --color-border-dark: #9ba0ab;
+  --color-border-dark2: #9ba0ab33;
 
   --color-text-primary: #40434a;
+  --color-text-secondary: #9ba0ab;
+  --color-text-white: #f4f6f9;
 }
