@@ -17,6 +17,7 @@
   margin: 16px 32% 56px;
 }
 .form-group-wrapper {
+  position: relative;
   margin: 32px 30% 0;
 }
 .btn-wrapper {

@@ -35,6 +35,7 @@ label .optional {
 .input-group {
   display: inline-flex;
   padding: 0;
+  margin-bottom: 8px;
   border-radius: 6px;
   border: 2px solid var(--color-border-dark2);
   flex-flow: row;
@@ -43,11 +44,17 @@ label .optional {
 }
 input {
   padding: 12px;
+  border-radius: 6px;
   border: none;
   outline: none;
   flex-grow: 1;
   color: var(--color-text-secondary);
   font-size: 15px;
+}
+input::placeholder {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  opacity: 0.7;
 }
 .input-prefix {
   padding: 12px;
@@ -71,4 +78,16 @@ input {
 }
 .btn:hover {
   opacity: 0.7;
+}
+.invalid-input {
+  border-color: var(--color-error);
+}
+.input-error-message {
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: right;
 }

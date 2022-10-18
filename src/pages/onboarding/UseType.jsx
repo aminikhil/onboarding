@@ -6,7 +6,12 @@ import iconGroupActive from "../../assets/images/group-primary.png";
 
 export default function UseType({ formData, setFormData }) {
   const handleUseTypeChange = (value) =>
-    setFormData({ ...formData, useType: value });
+    setFormData((oldData) => {
+      const newData = { ...oldData };
+      newData.useType.value = value;
+      if (newData.useType.isValid(value)) newData.useType.errorMessage = "";
+      return newData;
+    });
 
   return (
     <>
@@ -25,7 +30,7 @@ export default function UseType({ formData, setFormData }) {
           <CardRadioInput
             label="Use Type"
             fieldValue="individual"
-            value={formData.useType}
+            value={formData.useType.value}
             setValue={handleUseTypeChange}
             title={"For myself"}
             subtitle={"Write better. Think more clearly. Stay organized."}
@@ -35,7 +40,7 @@ export default function UseType({ formData, setFormData }) {
           <CardRadioInput
             label="Use Type"
             fieldValue="team"
-            value={formData.useType}
+            value={formData.useType.value}
             setValue={handleUseTypeChange}
             title={"With my team"}
             subtitle={"Wikis, docs, tasks & projects, all in one place."}
@@ -43,6 +48,9 @@ export default function UseType({ formData, setFormData }) {
             imgActive={iconGroupActive}
           />
         </div>
+        <span className="input-error-message">
+          {formData.useType.errorMessage}
+        </span>
       </div>
     </>
   );

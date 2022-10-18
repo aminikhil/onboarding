@@ -2,9 +2,20 @@ import TextInput from "../../components/input/TextInput";
 
 export default function BasicDetails({ formData, setFormData }) {
   const handleFullNameChange = (value) =>
-    setFormData({ ...formData, fullName: value });
+    setFormData((oldData) => {
+      const newData = { ...oldData };
+      newData.fullName.value = value;
+      if (newData.fullName.isValid(value)) newData.fullName.errorMessage = "";
+      return newData;
+    });
   const handleDisplayNameChange = (value) =>
-    setFormData({ ...formData, displayName: value });
+    setFormData((oldData) => {
+      const newData = { ...oldData };
+      newData.displayName.value = value;
+      if (newData.displayName.isValid(value))
+        newData.displayName.errorMessage = "";
+      return newData;
+    });
 
   return (
     <>
@@ -13,13 +24,19 @@ export default function BasicDetails({ formData, setFormData }) {
       <div className="form-group-wrapper">
         <TextInput
           label="Full Name"
-          value={formData.fullName}
+          value={formData.fullName.value}
           setValue={handleFullNameChange}
+          validation={formData.fullName.isValid}
+          errorMessage={formData.fullName.errorMessage}
+          placeholder="Enter your full name"
         />
         <TextInput
           label="Display Name"
-          value={formData.displayName}
+          value={formData.displayName.value}
           setValue={handleDisplayNameChange}
+          validation={formData.displayName.isValid}
+          errorMessage={formData.displayName.errorMessage}
+          placeholder="Enter display name"
         />
       </div>
     </>

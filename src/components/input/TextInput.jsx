@@ -4,6 +4,9 @@ export default function TextInput({
   setValue,
   prefix,
   optional = false,
+  validation = (value) => true,
+  errorMessage = "",
+  placeholder = "",
 }) {
   const inputId = `input_${label}`;
 
@@ -12,7 +15,9 @@ export default function TextInput({
       <label htmlFor={inputId}>
         {label} {optional && <span className="optional">(optional)</span>}
       </label>
-      <div className="input-group">
+      <div
+        className={`input-group ${errorMessage !== "" ? "invalid-input" : ""}`}
+      >
         {prefix && <span className="input-prefix">{prefix}</span>}
         <input
           id={inputId}
@@ -23,8 +28,10 @@ export default function TextInput({
               setValue(e.target.value);
             }
           }}
+          placeholder={placeholder}
         />
       </div>
+      <span className="input-error-message">{errorMessage}</span>
     </div>
   );
 }

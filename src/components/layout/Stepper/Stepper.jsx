@@ -1,4 +1,4 @@
-import { cloneElement, Fragment, useEffect } from "react";
+import { cloneElement, Fragment } from "react";
 import Divider from "./Divider";
 import "./Stepper.css";
 

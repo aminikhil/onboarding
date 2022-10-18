@@ -1,10 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Onboarding from "./pages/onboarding/Onboarding";
 
 function App() {
   return (
     <div className="App">
-      <Onboarding />
+      <Routes>
+        <Route path="/" element={<Onboarding />} />
+      </Routes>
     </div>
   );
 }

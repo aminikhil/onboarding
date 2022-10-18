@@ -2,9 +2,19 @@ import TextInput from "../../components/input/TextInput";
 
 export default function WorkspaceDetails({ formData, setFormData }) {
   const handleWorkspaceNameChange = (value) =>
-    setFormData({ ...formData, workspaceName: value });
+    setFormData((oldData) => {
+      const newData = { ...oldData };
+      newData.workspaceName.value = value;
+      if (newData.workspaceName.isValid(value))
+        newData.workspaceName.errorMessage = "";
+      return newData;
+    });
   const handleWorkspaceURLChange = (value) =>
-    setFormData({ ...formData, workspaceURL: value });
+    setFormData((oldData) => {
+      const newData = { ...oldData };
+      newData.workspaceURL.value = value;
+      return newData;
+    });
 
   return (
     <>
@@ -13,15 +23,19 @@ export default function WorkspaceDetails({ formData, setFormData }) {
       <div className="form-group-wrapper">
         <TextInput
           label="Workspace Name"
-          value={formData.workspaceName}
+          value={formData.workspaceName.value}
           setValue={handleWorkspaceNameChange}
+          validation={formData.workspaceName.isValid}
+          errorMessage={formData.workspaceName.errorMessage}
+          placeholder="Enter workspace name"
         />
         <TextInput
           label="Workspace URL"
-          value={formData.workspaceURL}
+          value={formData.workspaceURL.value}
           setValue={handleWorkspaceURLChange}
           prefix="www.eden.com/"
           optional={true}
+          placeholder="Example"
         />
       </div>
     </>
