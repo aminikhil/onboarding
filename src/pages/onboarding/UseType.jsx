@@ -14,7 +14,7 @@ export default function UseType({ formData, setFormData }) {
     });
 
   return (
-    <>
+    <div className="step-box">
       <h1 className="title">How are you planning to use Eden?</h1>
       <p className="body1">
         We'll streamline your setup experience accordingly.
@@ -46,6 +46,6 @@ export default function UseType({ formData, setFormData }) {
           {formData.useType.errorMessage}
         </span>
       </div>
-    </>
+    </div>
   );
 }

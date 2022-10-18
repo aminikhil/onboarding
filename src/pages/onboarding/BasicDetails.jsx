@@ -18,7 +18,7 @@ export default function BasicDetails({ formData, setFormData }) {
     });
 
   return (
-    <>
+    <div className="step-box">
       <h1 className="title">Welcome! First things first...</h1>
       <p className="body1">You can always change them later.</p>
       <div className="form-group-wrapper">
@@ -39,6 +39,6 @@ export default function BasicDetails({ formData, setFormData }) {
           placeholder="Enter display name"
         />
       </div>
-    </>
+    </div>
   );
 }

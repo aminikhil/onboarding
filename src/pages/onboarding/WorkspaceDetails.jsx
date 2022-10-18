@@ -17,7 +17,7 @@ export default function WorkspaceDetails({ formData, setFormData }) {
     });
 
   return (
-    <>
+    <div className="step-box">
       <h1 className="title">Let's set up a home for all your work</h1>
       <p className="body1">You can always create another workspace later.</p>
       <div className="form-group-wrapper">
@@ -38,6 +38,6 @@ export default function WorkspaceDetails({ formData, setFormData }) {
           placeholder="Example"
         />
       </div>
-    </>
+    </div>
   );
 }
