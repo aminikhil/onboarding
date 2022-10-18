@@ -31,3 +31,27 @@
   margin: auto !important;
   margin-bottom: 32px !important;
 }
+.select-card-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 36px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Onboarding {
+    width: 100%;
+  }
+  .Onboarding .Stepper {
+    margin: 16px 15% 56px;
+  }
+  .form-group-wrapper {
+    margin: 32px 8% 0;
+  }
+  .btn-wrapper {
+    margin: 20px 8%;
+  }
+  .select-card-options {
+    column-gap: 20px;
+  }
+}

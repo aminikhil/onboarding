@@ -33,6 +33,7 @@ label .optional {
   font-weight: 400;
 }
 .input-group {
+  width: 100%;
   display: inline-flex;
   padding: 0;
   margin-bottom: 8px;
@@ -43,6 +44,7 @@ label .optional {
   font-size: 15px;
 }
 input {
+  width: 0;
   padding: 12px;
   border-radius: 6px;
   border: none;
@@ -76,7 +78,7 @@ input::placeholder {
   background-color: var(--color-primary);
   color: #f4f6f9;
 }
-.btn:hover {
+.btn:active {
   opacity: 0.7;
 }
 .invalid-input {
@@ -90,4 +92,9 @@ input::placeholder {
   font-size: 12px;
   font-weight: 500;
   text-align: right;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
 }

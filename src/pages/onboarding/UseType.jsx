@@ -20,13 +20,7 @@ export default function UseType({ formData, setFormData }) {
         We'll streamline your setup experience accordingly.
       </p>
       <div className="form-group-wrapper">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: 36,
-          }}
-        >
+        <div className="select-card-options">
           <CardRadioInput
             label="Use Type"
             fieldValue="individual"

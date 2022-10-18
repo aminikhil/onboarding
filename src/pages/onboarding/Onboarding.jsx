@@ -97,7 +97,7 @@ export default function Onboarding() {
       />
       <div className="btn-wrapper">
         <button className="btn btn-primary" onClick={handleOnClick}>
-          Create Workspace
+          {activeStep === 3 ? "Launch Eden" : "Create Workspace"}
         </button>
       </div>
     </div>
